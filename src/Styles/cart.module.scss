@@ -1,0 +1,42 @@
+.inner {
+  max-width: 708px;
+  margin: 0 auto;
+  padding: 10px 13px;
+  background-color: #d9d9d9;
+  border-radius: 15px;
+  margin-bottom: 47px;
+}
+.cart {
+  h2 {
+    font-size: 36px;
+    margin-bottom: 11px;
+  }
+}
+.cartItem {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+.form {
+  display: flex;
+  justify-content: space-between;
+  gap: 17px;
+  align-items: stretch;
+  input {
+    padding-block: 12px;
+    padding-left: 16px;
+    font-size: 36px;
+    border: none;
+    color: #f0f0f0;
+    background-color: #000000;
+    border-radius: 15px;
+    width: 100%;
+  }
+  button {
+    padding: 12px 57px;
+    font-size: 36px;
+    color: #f0f0f0;
+    background-color: #000000;
+    border-radius: 15px;
+  }
+}
