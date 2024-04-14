@@ -4,6 +4,11 @@
   align-items: stretch;
   gap: 34px;
   margin-bottom: 243px;
+  flex-wrap: wrap;
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
 }
 .item {
   border-radius: 15px;
@@ -12,12 +17,27 @@
   padding: 20px 27px;
   font-size: 24px;
   color: #000000;
-  h2 {
-    font-size: 24px;
-    font-weight: 400;
+  h1 {
+    font-size: 36px;
+    text-align: center;
+    font-weight: 700;
     margin-bottom: 20px;
   }
   p {
     margin-bottom: 20px;
+  }
+}
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: #fefefe #0000;
+  animation: l1 1s infinite;
+  margin: 0 auto;
+}
+@keyframes l1 {
+  to {
+    transform: rotate(0.5turn);
   }
 }

@@ -14,3 +14,11 @@
   background-color: #777777;
   border-radius: 15px;
 }
+@media (max-width: 1024px) {
+  .title {
+    margin-top: 5px;
+    font-size: 30px;
+    height: 80px;
+    margin-bottom: 40px;
+  }
+}

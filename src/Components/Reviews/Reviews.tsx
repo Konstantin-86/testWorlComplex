@@ -7,23 +7,26 @@ import { reviewType } from "../../Types/ReviewType";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState<reviewType[]>([]);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     axios
-      .get("https://15de2ae6bb721335.mokky.dev/reviews")
-      .then((res) => setReviews(res.data));
+      .get("http://o-complex.com:1337/reviews")
+      .then((res) => setReviews(res.data))
+      .then(() => setLoading(true))
+      .catch((error) => console.error("Error fetching user data:", error));
   }, []);
+
   return (
     <div className={styles.inner}>
-      {reviews.map((item) => (
-        <div className={styles.item} key={item.id}>
-          <h2>{item.title}</h2>
-          <p>{item.text}</p>
-          <p>{item.text1}</p>
-          <p>{item.text2}</p>
-          <p>{item.text3}</p>
-          {item.text4 && <p>{item.text4}</p>}
-        </div>
-      ))}
+      {loading ? (
+        reviews.map((item, index) => (
+          <div className={styles.item} key={index}>
+            <div dangerouslySetInnerHTML={{ __html: item.text }} />
+          </div>
+        ))
+      ) : (
+        <div className={styles.loader}></div>
+      )}
     </div>
   );
 };

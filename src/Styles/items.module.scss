@@ -1,33 +1,34 @@
 .inner {
+  max-width: 1110px;
+  padding: 0 5px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: stretch;
+  flex-wrap: wrap;
+  gap: 35px;
 }
-.item {
-  max-width: 301px;
-  padding: 10px;
-  background-color: #d9d9d9;
-  border-radius: 15px;
-  .title {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 36px;
-  }
-  .description {
-    font-size: 24px;
-  }
-  .price {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 33px;
-  }
-  .button {
-    width: 100%;
-    padding-block: 7px;
-    border-radius: 15px;
-    font-size: 36px;
-    background-color: #000000;
-    color: #d9d9d9;
-    border: none;
+.titleNo {
+  color: #d9d9d9;
+}
+
+.observer {
+  width: 100%;
+  height: 50px;
+  background-color: teal;
+}
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: #fefefe #0000;
+  animation: l1 1s infinite;
+  margin: 0 auto;
+}
+@keyframes l1 {
+  to {
+    transform: rotate(0.5turn);
   }
 }
