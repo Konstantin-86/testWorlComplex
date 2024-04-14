@@ -43,9 +43,12 @@ const Cart = () => {
         quantity: item.quantity,
       });
     });
-    console.log(sendCart);
     axios
-      .post("http://o-complex.com:1337/order", sendCart)
+      .post("http://o-complex.com:1337/order", sendCart, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
       .then((response) => {
         console.log("Ответ от сервера:", response.data);
       })

@@ -20,7 +20,6 @@ function App() {
   useEffect(() => {
     const savedCart = localStorage.getItem("cart");
     if (savedCart) {
-      console.log("положился в локалсторадж");
       setCart(JSON.parse(savedCart));
     }
   }, []);

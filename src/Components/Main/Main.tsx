@@ -18,7 +18,11 @@ const Main = () => {
   useEffect(() => {
     if (amount) {
       axios
-        .get(`http://o-complex.com:1337/products?page=${page}&page_size=20`)
+        .get(`http://o-complex.com:1337/products?page=${page}&page_size=20`, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
         .then((res) => {
           setAmount(res.data.amount);
           setItems([...items, ...res.data.products]);

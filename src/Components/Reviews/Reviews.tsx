@@ -10,7 +10,11 @@ const Reviews = () => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     axios
-      .get("http://o-complex.com:1337/reviews")
+      .get("http://o-complex.com:1337/reviews", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
       .then((res) => setReviews(res.data))
       .then(() => setLoading(true))
       .catch((error) => console.error("Error fetching user data:", error));
