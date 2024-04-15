@@ -9,7 +9,6 @@ import styles from "../../Styles/cart.module.scss";
 import axios from "axios";
 
 const HTTPSreq = "https://15de2ae6bb721335.mokky.dev/order";
-const HTTPreq = "http://o-complex.com:1337/order";
 
 const Cart = () => {
   const [phoneNumber, setPhoneNumber] = useState("");

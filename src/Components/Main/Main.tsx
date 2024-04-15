@@ -8,7 +8,6 @@ import Item from "./Item";
 const Main = () => {
   const [items, setItems] = useState<productType[]>([]);
   const [loading, setLoading] = useState(false);
-  const [amount, setAmount] = useState(1);
   const [page, setPage] = useState(1);
 
   const { ref, inView } = useInView({
@@ -16,27 +15,25 @@ const Main = () => {
   });
 
   useEffect(() => {
-    if (amount) {
-      axios
-        /* `http://o-complex.com:1337/products?page=${page}&page_size=20` */
+    axios
+      /* `http://o-complex.com:1337/products?page=${page}&page_size=20` */
 
-        .get(`https://15de2ae6bb721335.mokky.dev/items`, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-        .then((res) => {
-          /*  setAmount(res.data.amount);
+      .get(`https://15de2ae6bb721335.mokky.dev/items`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        /*  setAmount(res.data.amount);
           setItems([...items, ...res.data.products]); */
-          setItems(res.data[0].products);
+        setItems(res.data[0].products);
 
-          /* setItems(res.data.products); */
-        })
-        .then(() => setLoading(true))
-        .catch((error) => {
-          console.error("Error fetching user data:", error);
-        });
-    }
+        /* setItems(res.data.products); */
+      })
+      .then(() => setLoading(true))
+      .catch((error) => {
+        console.error("Error fetching user data:", error);
+      });
   }, [page]);
 
   useEffect(() => {
