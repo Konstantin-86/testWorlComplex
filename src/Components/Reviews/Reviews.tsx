@@ -5,12 +5,15 @@ import styles from "../../Styles/reviews.module.scss";
 
 import { reviewType } from "../../Types/ReviewType";
 
+const HTTPSreq = "https://15de2ae6bb721335.mokky.dev/reviews";
+const HTTPreq = "http://o-complex.com:1337/reviews";
+
 const Reviews = () => {
   const [reviews, setReviews] = useState<reviewType[]>([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     axios
-      .get("http://o-complex.com:1337/reviews", {
+      .get(HTTPSreq, {
         headers: {
           "Content-Type": "application/json",
         },

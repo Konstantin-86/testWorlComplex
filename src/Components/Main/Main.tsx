@@ -18,14 +18,19 @@ const Main = () => {
   useEffect(() => {
     if (amount) {
       axios
-        .get(`http://o-complex.com:1337/products?page=${page}&page_size=20`, {
+        /* `http://o-complex.com:1337/products?page=${page}&page_size=20` */
+
+        .get(`https://15de2ae6bb721335.mokky.dev/items`, {
           headers: {
             "Content-Type": "application/json",
           },
         })
         .then((res) => {
-          setAmount(res.data.amount);
-          setItems([...items, ...res.data.products]);
+          /*  setAmount(res.data.amount);
+          setItems([...items, ...res.data.products]); */
+          setItems(res.data[0].products);
+
+          /* setItems(res.data.products); */
         })
         .then(() => setLoading(true))
         .catch((error) => {

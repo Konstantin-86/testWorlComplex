@@ -8,6 +8,9 @@ import InputMask from "react-input-mask";
 import styles from "../../Styles/cart.module.scss";
 import axios from "axios";
 
+const HTTPSreq = "https://15de2ae6bb721335.mokky.dev/order";
+const HTTPreq = "http://o-complex.com:1337/order";
+
 const Cart = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [validInpt, setValidInpt] = useState(false);
@@ -44,7 +47,7 @@ const Cart = () => {
       });
     });
     axios
-      .post("http://o-complex.com:1337/order", sendCart, {
+      .post(HTTPSreq, sendCart, {
         headers: {
           "Content-Type": "application/json",
         },
